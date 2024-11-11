@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Catálogo Musical</title>
+</head>
+<body>
+    <h1>Catálogo Musical</h1>
+    <ul>
+        <% catalogos.forEach(function(catalogo) { %>
+            <li>
+                <a href="/catalogo/<%= catalogo.id %>"><%= catalogo.titulo %></a> - <%= catalogo.anoDeLancamento %>
+                <br>
+                <ul>
+                    <% listaDeFaixas.forEach(function(listaDeFaixas) { %>
+            </li>
+        <% }); %>
+    </ul>
+    <a href="/adicionarCatalogo">Adicionar Catálogo</a>
+
+</body>
+</html>
