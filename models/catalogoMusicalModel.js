@@ -1,11 +1,7 @@
-const listaDeFaixas = [
-    {
-        id: 1, titulo: 'The Tortured Poets Department'
-    }
-];
+const listaDeFaixas = ["faixa1", "faixa2", "faixa3"];
 
-const catalogo = [
-    { id: 1, titulo: 'The Tortured Poets Department', anoDeLancamento: 2024, capa: capa, listaDeFaixas: listaDeFaixas}
+const catalogos = [
+    { id: 1, titulo: 'The Tortured Poets Department', anoDeLancamento: 2024, capa: "caminho/para/a/imagem.jpg", listaDeFaixas: listaDeFaixas}
 ];
 
 const getCatalogos = () => catalogos;

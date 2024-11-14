@@ -5,7 +5,7 @@ const catalogoMusicalController = require('../controllers/catalogoMusicalControl
 router.get('/', catalogoMusicalController.getAllCatalogos); 
 router.get('/catalogo/:id', catalogoMusicalController.getCatalogo);
 router.get('/adicionarCatalogo', catalogoMusicalController.getAdicionarCatalogos);
-router.post('/adicionarCatalogo', pokemonController.createCatalogos);
+router.post('/adicionarCatalogo', catalogoMusicalController.createCatalogos);
 
 
 module.exports = router;
