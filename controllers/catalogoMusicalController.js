@@ -1,31 +1,31 @@
 const catalogoMusicalModel = require('../models/catalogoMusicalModel');
 
-const getAllCatalogos = (req, res) => {
-    const catalogos = catalogoMusicalModel.getCatalogos();
-    res.render('index', { catalogos });
+const getAllAlbuns = (req, res) => {
+    const albuns = catalogoMusicalModel.getAlbuns();
+    res.render('index', { albuns });
 };
 
-const getCatalogo = (req, res) => {
-    const catalogo = catalogoMusicalModel.getCatalogoById(req.params.id);
-    if (catalogo) {
-        res.render('catalogo', { catalogo });
+const getAlbum = (req, res) => {
+    const album = catalogoMusicalModel.getAlbumById(req.params.id);
+    if (album) {
+        res.render('album', { album });
     } else {
-        res.status(404).send('Catálogo não encontrado');
+        res.status(404).send('Álbum não encontrado');
     }
 };
 
-const getAdicionarCatalogos = (req, res) => {
-    res.render('adicionarCatalogo');
+const getAdicionarAlbuns = (req, res) => {
+    res.render('adicionarAlbum');
 }
 
-const createCatalogos = (req, res) => {
-    catalogoMusicalModel.createCatalogo(req.body.tipo, req.body.anoDeLancamento, req.body.capa, req.body.listaDeFaixas);
+const createAlbuns = (req, res) => {
+    catalogoMusicalModel.createAlbum(req.body.titulo, req.body.artista, req.body.anoDeLancamento, req.body.capa, req.body.listaDeFaixas);
     res.redirect('/');
 }
 
 module.exports = {
-    getAllCatalogos,
-    getCatalogo,
-    getAdicionarCatalogos,
-    createCatalogos
+    getAllAlbuns,
+    getAlbum,
+    getAdicionarAlbuns,
+    createAlbuns
 };

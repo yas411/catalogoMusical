@@ -1,28 +1,29 @@
 const listaDeFaixas = ["faixa1", "faixa2", "faixa3"];
 
-const catalogos = [
-    { id: 1, titulo: 'The Tortured Poets Department', anoDeLancamento: 2024, capa: "caminho/para/a/imagem.jpg", listaDeFaixas: listaDeFaixas}
+const albuns = [
+    { id: 1, titulo: 'The Tortured Poets Department', artista: "Taylor Swift", anoDeLancamento: 2024, capa: "caminho/para/a/imagem.jpg", listaDeFaixas: listaDeFaixas}
 ];
 
-const getCatalogos = () => catalogos;
-const getCatalogoById = (id) => catalogos.find(c => c.id === parseInt(id));
+const getAlbuns = () => albuns;
+const getAlbumById = (id) => albuns.find(c => c.id === parseInt(id));
 
-const getAdicionarCatalogo = () => catalogos;
+const getAdicionarAlbum = () => albuns;
 
-const createCatalogo = (nome, tipo) => {
-    const newCatalogo = {
-        id: catalogos.length + 1,
+const createAlbum = (titulo, artista, anoDeLancamento, capa, listaDeFaixas) => {
+    const newAlbum = {
+        id: albuns.length + 1,
         titulo: titulo,
+        artista: artista,
         anoDeLancamento: anoDeLancamento,
         capa: capa,
         listaDeFaixas: listaDeFaixas
     };
-    catalogos.push(newCatalogo);
+    albuns.push(newAlbum);
 };
 
 module.exports = {
-    getCatalogos,
-    getCatalogoById,
-    getAdicionarCatalogo,
-    createCatalogo
+    getAlbuns,
+    getAlbumById,
+    getAdicionarAlbum,
+    createAlbum
 };

@@ -7,15 +7,17 @@
 <body>
     <h1>Catálogo Musical</h1>
     <ul>
-        <% catalogos.forEach(function(catalogo) { %>
+        <% albuns.forEach(function(album) { %>
             <li>
-                <a href="/catalogo/<%= catalogo.id %>"><%= catalogo.titulo %></a> - <%= catalogo.anoDeLancamento %>
+                <a href="/album/<%= album.id %>"><%= album.titulo %></a> - <%= album.anoDeLancamento %>
                 <br>
                 <ul>
             </li>
         <% }); %>
     </ul>
-    <a href="/adicionarCatalogo">Adicionar Catálogo</a>
+    <a href="/artistas">Ver Artistas</a>
+    <br>
+    <a href="/adicionarAlbum">Adicionar Álbum</a>
 
 </body>
 </html>

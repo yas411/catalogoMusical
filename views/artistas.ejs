@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Artistas</title>
+</head>
+<body>
+    <h1>Artistas</h1>
+    <ul>
+        <% artistas.forEach(function(artista) { %>
+            <li>
+                <a href="/artista/<%= artista.id %>"><%= artista.nome %></a>
+                <br>
+                <ul>
+            </li>
+        <% }); %>
+    </ul>
+    <a href="/adicionarArtista">Adicionar Artista</a>
+
+</body>
+</html>

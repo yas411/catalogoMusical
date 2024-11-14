@@ -2,10 +2,9 @@ const express = require('express');
 const router = express.Router();
 const catalogoMusicalController = require('../controllers/catalogoMusicalController');
 
-router.get('/', catalogoMusicalController.getAllCatalogos); 
-router.get('/catalogo/:id', catalogoMusicalController.getCatalogo);
-router.get('/adicionarCatalogo', catalogoMusicalController.getAdicionarCatalogos);
-router.post('/adicionarCatalogo', catalogoMusicalController.createCatalogos);
-
+router.get('/', catalogoMusicalController.getAllAlbuns); 
+router.get('/album/:id', catalogoMusicalController.getAlbum);
+router.get('/adicionarAlbum', catalogoMusicalController.getAdicionarAlbuns);
+router.post('/adicionarAlbum', catalogoMusicalController.createAlbuns);
 
 module.exports = router;
