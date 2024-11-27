@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Artista</title>
+</head>
+<body>
+    <h1>Criar Artista</h1>
+    <form action="/adicionarArtista" method="POST">
+        <div>
+            <label for="nome">Nome do Artista:</label>
+            <input type="text" id="nome" name="nome" required>
+        </div>
+        <div>
+            <label for="generoMusical">Gênero Musical:</label>
+            <input type="text" id="generoMusical" name="generoMusical" required>
+        </div>
+        <div>
+            <label for="idDisco">Escolha um Disco Existente:</label>
+            <select name="idDisco" id="idDisco" required>
+                <% discos.forEach(disco => { %>
+                    <option value="<%= disco.idDisco %>"><%= disco.titulo %> - <%= disco.anoDeLancamento %></option>
+                <% }) %>
+            </select>
+        </div>
+        <button type="submit">Criar Artista</button>
+    </form>
+</body>
+</html>

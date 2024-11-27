@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Artistas</title>
+</head>
+<body>
+    <h1>Artistas</h1>
+    <form action="/artistas/buscar" method="GET">
+        <label for="nome">Nome do Artista:</label>
+        <input type="text" name="nome" id="nome" placeholder="Buscar por nome" />
+        
+        <label for="generoMusical">Gênero Musical:</label>
+        <input type="text" name="generoMusical" id="generoMusical" placeholder="Buscar por gênero musical" />
+        
+        <button type="submit">Buscar</button>
+    </form>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nome do Artista</th>
+                <th>Gênero Musical</th>
+                <th>Discos</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% artistas.forEach(artista => { %>
+                <tr>
+                    <td><%= artista.nome %></td>
+                    <td><%= artista.generoMusical %></td>
+                    <td>
+                        <% if (artista.artistaDiscos.length > 0) { %>
+                            <ul>
+                                <% artista.artistaDiscos.forEach(disco => { %>
+                                    <li><%= disco.titulo %> (<%= disco.anoDeLancamento %>)</li>
+                                <% }) %>
+                            </ul>
+                        <% } else { %>
+                            <p>Sem discos associados</p>
+                        <% } %>
+                    </td>
+                    <td>
+                        <a href="/artistas/<%= artista.idArtista %>/editar">
+                            <button>Editar</button>
+                        </a>
+                        <form action="/artistas/<%= artista.idArtista %>" method="POST" style="display:inline;">
+                            <button type="submit" onclick="return confirm('Tem certeza que deseja excluir?')">Deletar</button>
+                        </form>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>
+

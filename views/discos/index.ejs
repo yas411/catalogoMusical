@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Discos</title>
+</head>
+<body>
+    <h1>Discos</h1>
+    
+    <form action="/discos/buscar" method="GET">
+        <label for="titulo">Título do Disco:</label>
+        <input type="text" name="titulo" id="titulo" placeholder="Buscar por título" />
+        
+        <label for="anoDeLancamento">Ano de Lançamento:</label>
+        <input type="text" name="anoDeLancamento" id="anoDeLancamento" placeholder="Buscar por ano de lançamento" />
+        
+        <label for="artistaId">Artista:</label>
+        <input type="text" name="artistaId" id="artistaId" placeholder="Buscar por artista" />
+        
+        <button type="submit">Buscar</button>
+    </form>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Ano de Lançamento</th>
+                <th>Artista</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% discos.forEach(disco => { %>
+                <tr>
+                    <td><%= disco.titulo %></td>
+                    <td><%= disco.anoDeLancamento %></td>
+                    <td><%= disco.artistaDiscos ? disco.artistaDiscos.nome : 'Desconhecido' %></td>
+                    <td>
+                        <a href="/discos/<%= disco.idDisco %>/editar">
+                            <button>Editar</button>
+                        </a>
+                        <form action="/discos/<%= disco.idDisco %>" method="POST" style="display:inline;">
+                            <button type="submit" onclick="return confirm('Tem certeza que deseja excluir?')">Deletar</button>
+                        </form>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>
+

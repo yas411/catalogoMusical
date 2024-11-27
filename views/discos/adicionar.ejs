@@ -1,0 +1,16 @@
+<%- include('layout') %>
+<h1>Adicionar Disco</h1>
+<form action="/adicionarDiscos" method="POST">
+    <label for="titulo">Título:</label>
+    <input type="text" id="titulo" name="titulo" required>
+    <label for="anoDeLancamento">Ano de Lançamento:</label>
+    <input type="number" id="anoDeLancamento" name="anoDeLancamento" required>
+    <label for="capa">Capa:</label>
+    <input type="file" id="capa" name="capa" required>
+    <label for="listaDeFaixas">Faixas (JSON):</label>
+    <input type="text" id="listaDeFaixas" name="listaDeFaixas" required>
+    <label for="artista">Artista:</label>
+    <input type="number" id="artista" name="artista" required>
+    <button type="submit">Adicionar</button>
+</form>
+

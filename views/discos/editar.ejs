@@ -1,0 +1,15 @@
+<%- include('layout') %>
+<h1>Editar Disco</h1>
+<form action="/discos/<%= disco.idDisco %>" method="POST">
+    <label for="titulo">Título:</label>
+    <input type="text" id="titulo" name="titulo" value="<%= disco.titulo %>" required>
+    <label for="anoDeLancamento">Ano de Lançamento:</label>
+    <input type="number" id="anoDeLancamento" name="anoDeLancamento" value="<%= disco.anoDeLancamento %>" required>
+    <label for="capa">Capa:</label>
+    <input type="file" id="capa" name="capa" required>
+    <label for="listaDeFaixas">Lista de Faixas (em JSON):</label>
+    <textarea name="listaDeFaixas" required><%= JSON.stringify(disco.listaDeFaixas) %></textarea>
+    <label for="artista">Artista:</label>
+    <input type="number" id="artista" name="artista" value="<%= disco.artistaId %>" required>
+    <button type="submit">Atualizar</button>
+</form>

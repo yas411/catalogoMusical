@@ -1,0 +1,9 @@
+<%- include('layout') %>
+<h1>Editar Artista</h1>
+<form action="/artistas/<%= artista.idArtista %>" method="POST">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" value="<%= artista.nome %>" required>
+    <label for="generoMusical">Gênero Musical:</label>
+    <input type="text" id="generoMusical" name="generoMusical" value="<%= artista.generoMusical %>" required>
+    <button type="submit">Atualizar</button>
+</form>

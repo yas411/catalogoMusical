@@ -1,0 +1,14 @@
+{
+  "development": {
+    "dialect": "oracle",
+    "host": "localhost",          
+    "username": "usuario",      
+    "password": "senha",        
+    "database": "xepdb1",              
+    "port": 1521,                   
+    "define": {
+      "timestamps": true,
+      "underscored": true
+    }
+  }
+}
